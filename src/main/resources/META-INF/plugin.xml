@@ -19,6 +19,19 @@
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
+        <group
+                id="kwick.group"
+                text="Text from xml"
+                description="Descr xml">
+
+            <add-to-group
+                    group-id="MainMenu"
+                    anchor="last"/>
+
+            <action class="MainAction"
+                    id="kwick.mainaction"
+                    text="text action xml"
+                    description="more description"/>
+        </group>
     </actions>
 </idea-plugin>
