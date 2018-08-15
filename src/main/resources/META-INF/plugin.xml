@@ -21,7 +21,7 @@
     <actions>
         <group
                 id="kwick.group"
-                text="Text from xml"
+                text="kwick Actions"
                 description="Descr xml">
 
             <add-to-group
@@ -29,8 +29,13 @@
                     anchor="last"/>
 
             <action class="MainAction"
-                    id="kwick.mainaction"
-                    text="text action xml"
+                    id="kwick.mainaction.1"
+                    text="[unused slot 1]"
+                    description="more description"/>
+
+            <action class="MainAction"
+                    id="kwick.mainaction.2"
+                    text="[unused slot 2]"
                     description="more description"/>
         </group>
     </actions>
