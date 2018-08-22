@@ -21,17 +21,11 @@ class MainAction : AnAction() {
 
     override fun actionPerformed(e: AnActionEvent) {
 
-        val r = handleAction(ActionManager.getInstance().getId(this))
+        //val r = handleAction(ActionManager.getInstance().getId(this))
 //        Messages.showMessageDialog("Action", "SLOT : $r", Messages.getInformationIcon())
 
-//        ShortcutDialogNew(getEventProject(e), true).show()
-//        ShortcutDialog().isVisible = true
-
-
-//        Messages.showDialog(e.project,"helo"," ", arrayOf(""),0,Messages.getInformationIcon())
-
-        //HelloForm.display()
         ShortcutDialog.display()
+
         val statusBar = WindowManager.getInstance()
                 .getStatusBar(DataKeys.PROJECT.getData(e.getDataContext()))
 
