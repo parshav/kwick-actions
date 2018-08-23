@@ -1,12 +1,11 @@
 <idea-plugin>
-    <id>kwick.1</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <id>pv.kwick.actions</id>
+    <name>Kwick Actions</name>
+    <vendor email="parshav@live.com" url="https://github.com/parshav/kwick-actions.git">kwick actions</vendor>
 
-    <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-    ]]></description>
+    <description>
+        Plugin that enables you to keymap shell commands.
+    </description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
