@@ -20,12 +20,9 @@ class MainAction : AnAction() {
         const val SLOT_3 = "kwick.mainaction.3"
     }
 
-        var ouptut = ""
-
     override fun actionPerformed(e: AnActionEvent) {
 
         handleAction(ActionManager.getInstance().getId(this))
-//        Messages.showMessageDialog("Action", "SLOT : $r", Messages.getInformationIcon())
 
         val statusBar = WindowManager.getInstance()
                 .getStatusBar(DataKeys.PROJECT.getData(e.getDataContext()))
@@ -58,11 +55,7 @@ class MainAction : AnAction() {
     private fun validateAndAct(id: Int) {
         val command = Main.getCommand(id)
         if (command.isNotEmpty()) {
-            val proc = Runtime.getRuntime().exec(command)
-            Scanner(proc.inputStream).use {
-                while (it.hasNextLine()) ouptut += it.nextLine()
-            }
-            Messages.showMessageDialog(ouptut,"Ran",Messages.getInformationIcon())
+            Runtime.getRuntime().exec(command)
         } else {
             Messages.showMessageDialog("No Command found","",Messages.getInformationIcon())
         }
