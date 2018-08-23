@@ -45,6 +45,13 @@ public class ShortcutDialog extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+        String[] data = Main.INSTANCE.getData();
+        if (data != null) {
+            textField1.setText(data[0]);
+            textField2.setText(data[1]);
+            textField3.setText(data[2]);
+        }
     }
 
     private void onOK() {
