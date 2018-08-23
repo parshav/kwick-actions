@@ -10,9 +10,9 @@ public class ShortcutDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private JTextField textField0;
     private JTextField textField1;
     private JTextField textField2;
-    private JTextField textField3;
 
     public ShortcutDialog() {
         setContentPane(contentPane);
@@ -46,15 +46,15 @@ public class ShortcutDialog extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-        textField1.setText(Main.INSTANCE.getCommand(0));
-        textField2.setText(Main.INSTANCE.getCommand(1));
-        textField3.setText(Main.INSTANCE.getCommand(2));
+        textField0.setText(DataStore.INSTANCE.getCommand(0));
+        textField1.setText(DataStore.INSTANCE.getCommand(1));
+        textField2.setText(DataStore.INSTANCE.getCommand(2));
     }
 
     private void onOK() {
         // add your code here
-        String[] data = {textField1.getText(), textField2.getText(), textField3.getText()};
-        Main.INSTANCE.updateData(data);
+        String[] data = {textField0.getText(), textField1.getText(), textField2.getText()};
+        DataStore.INSTANCE.updateData(data);
         dispose();
     }
 

@@ -1,7 +1,7 @@
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.ActionManager
 
-object Main {
+object DataStore {
 
     const val KEY = "kwick.storage.key"
 

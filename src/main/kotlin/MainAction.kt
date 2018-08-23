@@ -6,9 +6,7 @@ import com.intellij.openapi.ui.popup.Balloon
 import com.intellij.ui.awt.RelativePoint
 import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.ui.MessageType
-import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.wm.WindowManager
-import java.util.*
 
 
 class MainAction : AnAction() {
@@ -45,11 +43,10 @@ class MainAction : AnAction() {
         else -> { }
     }
 
-    private fun validateAndAct(id: Int) {
-        val command = Main.getCommand(id)
-        if (command.isNotEmpty()) {
-            Runtime.getRuntime().exec(command)
-            popup("Ran command $command")
+    private fun validateAndAct(id: Int) = DataStore.getCommand(id).let {
+        if (it.isNotEmpty()) {
+            Runtime.getRuntime().exec(it)
+            popup("Ran command $it")
         } else {
             popup("No Command found.")
         }
@@ -61,7 +58,7 @@ class MainAction : AnAction() {
 
         JBPopupFactory.getInstance()
                 .createHtmlTextBalloonBuilder(text, MessageType.INFO, null)
-                .setFadeoutTime(7500)
+                .setFadeoutTime(5000)
                 .createBalloon()
                 .show(RelativePoint.getCenterOf(statusBar.component),
                         Balloon.Position.atRight)
