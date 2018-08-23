@@ -1,3 +1,4 @@
+import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -17,6 +18,14 @@ class MainAction : AnAction() {
         const val SLOT_3 = "kwick.mainaction.3"
         const val SLOT_4 = "kwick.mainaction.4"
         const val SLOT_5 = "kwick.mainaction.5"
+
+        const val KEY = "kwick.storage.key"
+    }
+
+    val dummyData = arrayOf("Data 1", "Data 2")
+
+    init {
+        PropertiesComponent.getInstance().setValues(KEY, dummyData)
     }
 
     override fun actionPerformed(e: AnActionEvent) {
