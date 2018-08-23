@@ -10,4 +10,10 @@ object Main {
     fun updateData(values: Array<String>) = pc.setValues(KEY, values)
 
     fun getData() = pc.getValues(KEY)
+
+    fun getCommand(id: Int) = getData()?.let {
+            it[id]
+        } ?: run {
+            ""
+        }
 }
