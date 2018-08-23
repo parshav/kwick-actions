@@ -29,12 +29,22 @@
                     anchor="last"/>
 
             <action class="MainAction"
+                    id="kwick.mainaction.0"
+                    text="The new slot"
+                    description="more description"/>
+
+            <action class="MainAction"
                     id="kwick.mainaction.1"
                     text="[unused slot 1]"
                     description="more description"/>
 
             <action class="MainAction"
                     id="kwick.mainaction.2"
+                    text="[unused slot 2]"
+                    description="more description"/>
+
+            <action class="MainAction"
+                    id="kwick.mainaction.3"
                     text="[unused slot 2]"
                     description="more description"/>
         </group>

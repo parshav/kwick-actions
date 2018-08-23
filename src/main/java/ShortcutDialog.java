@@ -49,6 +49,8 @@ public class ShortcutDialog extends JDialog {
 
     private void onOK() {
         // add your code here
+        String[] data = {textField1.getText(), textField2.getText(), textField3.getText()};
+        Main.INSTANCE.updateData(data);
         dispose();
     }
 

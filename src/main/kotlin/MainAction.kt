@@ -13,19 +13,11 @@ import com.intellij.openapi.wm.WindowManager
 class MainAction : AnAction() {
 
     companion object {
+        const val SLOT_0 = "kwick.mainaction.0"
         const val SLOT_1 = "kwick.mainaction.1"
         const val SLOT_2 = "kwick.mainaction.2"
         const val SLOT_3 = "kwick.mainaction.3"
-        const val SLOT_4 = "kwick.mainaction.4"
-        const val SLOT_5 = "kwick.mainaction.5"
 
-        const val KEY = "kwick.storage.key"
-    }
-
-    val dummyData = arrayOf("Data 1", "Data 2")
-
-    init {
-        PropertiesComponent.getInstance().setValues(KEY, dummyData)
     }
 
     override fun actionPerformed(e: AnActionEvent) {
@@ -46,12 +38,11 @@ class MainAction : AnAction() {
                         Balloon.Position.atRight)
     }
 
-    private fun handleAction(action: String): String = when (action) {
+    private fun handleAction(action: String) = when (action) {
+        SLOT_0 -> { SLOT_0 }
         SLOT_1 -> { SLOT_1 }
         SLOT_2 -> { SLOT_2 }
         SLOT_3 -> { SLOT_3 }
-        SLOT_4 -> { SLOT_4 }
-        SLOT_5 -> { SLOT_5 }
         else -> { "NOPE" }
     }
 }
