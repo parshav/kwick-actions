@@ -12,7 +12,7 @@ object Main {
     fun getData() = pc.getValues(KEY)
 
     fun getCommand(id: Int) = getData()?.let {
-            it[id]
+            if (it[id].isNullOrEmpty()) "" else it[id]
         } ?: run {
             ""
         }

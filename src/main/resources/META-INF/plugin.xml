@@ -30,22 +30,22 @@
 
             <action class="MainAction"
                     id="kwick.mainaction.0"
-                    text="The new slot"
+                    text="Edit Kwick Commands"
                     description="more description"/>
 
             <action class="MainAction"
                     id="kwick.mainaction.1"
-                    text="[unused slot 1]"
+                    text="Command 1"
                     description="more description"/>
 
             <action class="MainAction"
                     id="kwick.mainaction.2"
-                    text="[unused slot 2]"
+                    text="Command 2"
                     description="more description"/>
 
             <action class="MainAction"
                     id="kwick.mainaction.3"
-                    text="[unused slot 2]"
+                    text="Command 3"
                     description="more description"/>
         </group>
     </actions>

@@ -8,6 +8,7 @@ import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.ui.MessageType
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.wm.WindowManager
+import java.util.*
 
 
 class MainAction : AnAction() {
@@ -18,6 +19,8 @@ class MainAction : AnAction() {
         const val SLOT_2 = "kwick.mainaction.2"
         const val SLOT_3 = "kwick.mainaction.3"
     }
+
+        var ouptut = ""
 
     override fun actionPerformed(e: AnActionEvent) {
 
@@ -55,7 +58,11 @@ class MainAction : AnAction() {
     private fun validateAndAct(id: Int) {
         val command = Main.getCommand(id)
         if (command.isNotEmpty()) {
-            Messages.showMessageDialog("Run the command","",Messages.getInformationIcon())
+            val proc = Runtime.getRuntime().exec(command)
+            Scanner(proc.inputStream).use {
+                while (it.hasNextLine()) ouptut += it.nextLine()
+            }
+            Messages.showMessageDialog(ouptut,"Ran",Messages.getInformationIcon())
         } else {
             Messages.showMessageDialog("No Command found","",Messages.getInformationIcon())
         }

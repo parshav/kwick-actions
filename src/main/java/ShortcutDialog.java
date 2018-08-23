@@ -49,8 +49,8 @@ public class ShortcutDialog extends JDialog {
         String[] data = Main.INSTANCE.getData();
         if (data != null) {
             textField1.setText(data[0]);
-            textField2.setText(data[1]);
-            textField3.setText(data[2]);
+//            textField2.setText(data[1]);
+//            textField3.setText(data[2]);
         }
     }
 
