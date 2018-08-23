@@ -20,19 +20,12 @@ class MainAction : AnAction() {
         const val SLOT_3 = "kwick.mainaction.3"
     }
 
+    var event: AnActionEvent? = null
+
     override fun actionPerformed(e: AnActionEvent) {
 
+        event = e
         handleAction(ActionManager.getInstance().getId(this))
-
-        val statusBar = WindowManager.getInstance()
-                .getStatusBar(DataKeys.PROJECT.getData(e.getDataContext()))
-
-        JBPopupFactory.getInstance()
-                .createHtmlTextBalloonBuilder("hello world", MessageType.INFO, null)
-                .setFadeoutTime(7500)
-                .createBalloon()
-                .show(RelativePoint.getCenterOf(statusBar.getComponent()),
-                        Balloon.Position.atRight)
     }
 
     private fun handleAction(action: String) = when (action) {
@@ -56,8 +49,21 @@ class MainAction : AnAction() {
         val command = Main.getCommand(id)
         if (command.isNotEmpty()) {
             Runtime.getRuntime().exec(command)
+            popup("Ran command $command")
         } else {
-            Messages.showMessageDialog("No Command found","",Messages.getInformationIcon())
+            popup("No Command found.")
         }
+    }
+
+    private fun popup(text: String) {
+        val statusBar = WindowManager.getInstance()
+                .getStatusBar(DataKeys.PROJECT.getData(event!!.dataContext))
+
+        JBPopupFactory.getInstance()
+                .createHtmlTextBalloonBuilder(text, MessageType.INFO, null)
+                .setFadeoutTime(7500)
+                .createBalloon()
+                .show(RelativePoint.getCenterOf(statusBar.component),
+                        Balloon.Position.atRight)
     }
 }
