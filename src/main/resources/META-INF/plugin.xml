@@ -1,24 +1,49 @@
 <idea-plugin>
-    <id>kwick.1</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <id>pv.kwick.actions</id>
+    <name>Kwick Actions</name>
+    <vendor email="parshav@live.com" url="https://github.com/parshav/kwick-actions.git">kwick actions</vendor>
 
-    <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-    ]]></description>
+    <description>
+        Plugin that enables you to keymap shell commands.
+    </description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
-    <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
-    -->
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
+        <group
+                id="kwick.group"
+                text="kwick"
+                description="Descr xml">
+
+            <add-to-group
+                    group-id="MainMenu"
+                    anchor="last"/>
+
+            <action class="MainAction"
+                    id="kwick.mainaction.0"
+                    text="Edit Kwick Commands"
+                    description="more description"/>
+
+            <action class="MainAction"
+                    id="kwick.mainaction.1"
+                    text="Command 1"
+                    description="more description"/>
+
+            <action class="MainAction"
+                    id="kwick.mainaction.2"
+                    text="Command 2"
+                    description="more description"/>
+
+            <action class="MainAction"
+                    id="kwick.mainaction.3"
+                    text="Command 3"
+                    description="more description"/>
+        </group>
     </actions>
 </idea-plugin>
