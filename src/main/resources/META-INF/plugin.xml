@@ -20,7 +20,7 @@
     <actions>
         <group
                 id="kwick.group"
-                text="kwick Actions"
+                text="kwick"
                 description="Descr xml">
 
             <add-to-group
