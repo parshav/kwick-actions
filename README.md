@@ -4,6 +4,8 @@
 ## About
 Since there wasn't a straight forward way to have a keyboard shortcut map to a shell command, this small plugin lets you store up to 3 commands that you can create a custom keyboard shortcut for.
 
+[Link to Plugin](https://plugins.jetbrains.com/plugin/11059-kwick-actions)
+
 ## How to use
 
 After installing the plugin, there will be a `kwick` titled drop down menu added in the main menu which looks like this.
